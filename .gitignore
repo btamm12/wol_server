@@ -90,3 +90,6 @@ target/
 
 # Mypy cache
 .mypy_cache/
+
+# Don't push MAC addresses
+mac_addrs.json

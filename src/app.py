@@ -1,3 +1,4 @@
+from json import load as load_json
 import logging
 import os
 from sanic import Sanic
@@ -25,9 +26,12 @@ async def extract_user(request: Request):
 async def wake(request: Request):
 
     # MAC Addresses to wake.
-    macs = {
-        "btamm-desktop": "30:9C:23:8B:EF:4C",
-    }
+    mac_addrs_path = os.path.join(ROOT_DIR, "mac_addrs.json")
+    if not os.path.exists(mac_addrs_path):
+        return text("mac_addrs.json does not exist", status=500)
+
+    with open(mac_addrs_path, mode="r") as f:
+        macs = load_json(f)
     valid_names = ",".join([key for key in macs])
 
     request_json = request.args

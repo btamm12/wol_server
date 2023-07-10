@@ -23,6 +23,12 @@ git clone git@github.com:btamm12/wol_server.git
 cd wol_server
 ```
 
+**Create/modify mac_addrs.json**
+```
+cp mac_addrs.example.json mac_addrs.json
+nano mac_addrs.json
+```
+
 **Create Virtual Environment**
 (note this requires anaconda)
 ```

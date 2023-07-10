@@ -11,7 +11,8 @@ python-dotenv>=0.5.1
 
 # project requirements
 aiohttp
-sanic
+sanic==22.3.0
+websockets==10.0
 
 # Timezone information for Python < 3.9
 backports.zoneinfo; python_version < '3.9'
